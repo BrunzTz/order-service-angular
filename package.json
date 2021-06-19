@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-ob": "ng serve --open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -21,8 +22,10 @@
     "@angular/router": "~12.0.5",
     "@nebular/eva-icons": "7.0.0",
     "@nebular/theme": "^7.0.0",
+    "@ng-select/ng-select": "^7.0.0",
+    "bootstrap": "^5.0.1",
     "eva-icons": "^1.1.2",
-    "rxjs": "~6.6.0",
+    "rxjs": "^6.6.7",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },
