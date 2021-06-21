@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './layout/layout.component';
-import { NbLayoutModule } from '@nebular/theme';
+import { NbIconModule, NbLayoutModule } from '@nebular/theme';
+import { RouterModule } from '@angular/router';
+import { IconAddRegisterComponent } from './icon-add-register/icon-add-register.component';
 
 @NgModule({
     declarations: [
-        LayoutComponent
+        LayoutComponent,
+        IconAddRegisterComponent,
     ],
     imports: [
         CommonModule,
-        NbLayoutModule
+        RouterModule,
+        NbLayoutModule,
+        NbIconModule
     ],
     exports: [
-        LayoutComponent
+        LayoutComponent,
+        IconAddRegisterComponent
     ]
 })
 export class SharedModule { }

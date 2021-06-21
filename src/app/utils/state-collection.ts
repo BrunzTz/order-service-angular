@@ -34,7 +34,7 @@ export class StateCollection<T extends { id: number }>{
         this.collection = this.collection.filter(t => t.id !== id);
     }
 
-    public updateId(value: T, id: number): T | undefined {
+    public updateById(id: number, value: T): T | undefined {
         const objFound = this.getById(id)
         if(!objFound) return undefined;
 

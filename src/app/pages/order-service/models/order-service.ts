@@ -6,7 +6,7 @@ import { PostoColeta } from "./posto-coleta";
 
 export interface OrderService {
     id: number,
-    data: Date,
+    date: Date,
     paciente: Paciente,
     convenio: Convenio,
     postoColeta: PostoColeta,

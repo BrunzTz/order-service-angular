@@ -1,1 +1,9 @@
-<input type="text" nbInput placeholder="Text field">
+<h4>Ordem Serviço</h4>
+
+<app-icon-add-register></app-icon-add-register>
+
+<app-order-service-table
+    [orderServices]="(facade.orderService$ | async) || []"
+    (onRemove)="facade.removeOrderService($event)"
+    (onEdit)="editOrderService($event)"
+></app-order-service-table>

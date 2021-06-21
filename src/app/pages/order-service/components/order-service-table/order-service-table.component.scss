@@ -1,0 +1,18 @@
+.acoes-icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.acoes-icons > nb-icon{
+    cursor: pointer;
+}
+
+.acoes-icons > nb-icon:hover{
+    transform: scale(1.1);
+}
+
+.table-header-acoes{
+    width: 100px;
+    text-align: center;
+}

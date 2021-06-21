@@ -11,6 +11,6 @@ import { HomeModule } from './home/home.module';
         ReactiveFormsModule,
         OrderServiceModule,
         HomeModule
-    ]
+    ],
 })
 export class PagesModule { }

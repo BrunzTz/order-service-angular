@@ -1,0 +1,29 @@
+<table class="table text-light">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Paciente</th>
+        <!-- <th>Exame</th> -->
+        <th>Convenio</th>
+        <th>Medico</th>
+        <th>Data</th>
+        <th class="table-header-acoes">Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let orderService of orderServices">
+        <td>{{orderService.id}}</td>
+        <td>{{orderService.paciente.nome}}</td>
+        <!-- <td>{{orderService.exame.descricao}}</td> -->
+        <td>{{orderService.convenio.descricao}}</td>
+        <td>{{orderService.medico.nome}}</td>
+        <td>{{orderService.date}}</td>
+        <td>
+            <div class="acoes-icons">
+                <nb-icon class="text-warning" (click)="onEdit.emit(orderService.id)" icon="edit-outline"></nb-icon>
+                <nb-icon class="text-danger" (click)="onRemove.emit(orderService.id)" icon="trash-2-outline"></nb-icon>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>

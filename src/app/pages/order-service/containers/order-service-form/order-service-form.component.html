@@ -1,1 +1,50 @@
-<p>order-service-form works!</p>
+<nb-card>
+    <nb-card-header>Cadastrar</nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="form">
+        <div class="form-group">
+          <label for="paciente" class="label">Paciente</label>
+          <nb-select fullWidth id="paciente" formControlName="paciente">
+            <nb-option *ngFor="let paciente of (facade.paciente$ | async)" [value]="paciente">{{paciente.nome}}</nb-option>
+          </nb-select>
+        </div>
+        <div class="form-group">
+          <label for="medico" class="label">Médico</label>
+          <nb-select fullWidth id="medico" formControlName="medico">
+            <nb-option *ngFor="let medico of (facade.medico$ | async)" [value]="medico">{{medico.nome}}</nb-option>
+          </nb-select>
+        </div>
+        <div class="form-group">
+          <label for="exame" class="label">Exame</label>
+          <nb-select fullWidth id="exame" formControlName="exame">
+            <nb-option *ngFor="let exame of (facade.exame$ | async)" [value]="exame">{{exame.descricao}}</nb-option>
+          </nb-select>
+        </div>
+        <div class="form-group">
+          <label for="posto_coleta" class="label">Posto de Coleta</label>
+          <nb-select fullWidth id="postoColeta" formControlName="postoColeta">
+            <nb-option *ngFor="let postoColeta of (facade.postoColeta$ | async)" [value]="postoColeta">{{postoColeta.descricao}}</nb-option>
+          </nb-select>
+        </div>
+        <div class="form-group">
+          <label for="convenio" class="label">Convenio</label>
+          <nb-select fullWidth id="convenio" formControlName="convenio">
+            <nb-option *ngFor="let convenio of (facade.convenio$ | async)" [value]="convenio">{{convenio.descricao}}</nb-option>
+          </nb-select>
+        </div>
+        <div class="form-group">
+          <label for="data" class="label">Data</label>
+          <input fullWidth nbInput id="data" [nbDatepicker]="formpicker" formControlName="data">
+          <nb-datepicker format="MM/dd/yyyy" #formpicker></nb-datepicker>
+        </div>
+        <div class="form-group">
+          <label for="preco" class="label">Preço</label>
+          <input type="text" nbInput fullWidth id="preco" formControlName="preco">
+        </div>
+        <div class="buttons-row">
+            <button type="button" nbButton status="primary" (click)="cadastrarOrderService()">Cadastrar</button>
+            <button type="button" nbButton status="danger" routerLink="/order-service">Votlar</button>
+        </div>
+      </form>
+    </nb-card-body>
+</nb-card>

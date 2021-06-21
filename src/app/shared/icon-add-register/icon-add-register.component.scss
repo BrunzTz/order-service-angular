@@ -1,0 +1,16 @@
+.icon-add-register{
+    text-align: right;
+}
+
+.icon-add-register > nb-icon{
+    width: 80px;
+    height: 40px;
+    background: linear-gradient(to left, #134e5e, #71b280);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.icon-add-register > nb-icon:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
