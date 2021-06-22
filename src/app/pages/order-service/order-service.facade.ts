@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
+import { format } from "date-fns";
 import { Observable } from "rxjs";
-import { distinctUntilChanged, debounceTime, switchMap, filter } from "rxjs/operators";
+import { distinctUntilChanged, debounceTime, switchMap, filter, tap, map } from "rxjs/operators";
 import { NotificationService } from "src/app/shared/services/notification/notification.service";
 import { OrderServiceApi } from "./api/order-service.api";
 import { Convenio } from "./models/convenio";
@@ -38,20 +39,14 @@ export class OrderServiceFacade {
 
     init(){
         this.api.list().subscribe(
-            orderService => this.state.orderService.collection = orderService
+            orderService => {
+                this.state.orderService.collection = orderService;
+            }
         );
     }
 
-    getById(userId: Observable<string | null>): OrderService | null{
-        userId.pipe(
-            filter(Boolean),
-            switchMap((id: any) => this.api.getById(id))
-        ).subscribe( (orderService: OrderService) => {
-            if(!orderService) return;
-      
-            this.state.orderServiceUpdate.document = orderService
-        })
-        return this.state.orderServiceUpdate.document; 
+    getById(id: string): Observable<OrderService>{
+        return this.api.getById(id);
     }
 
     getDadosForm(){

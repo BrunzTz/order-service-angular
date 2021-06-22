@@ -18,10 +18,4 @@ export class OrderServiceTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ngOnChanges(){
-    console.log(this.orderServices)
-  }
-
-  
-
 }
